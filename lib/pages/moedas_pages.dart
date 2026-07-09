@@ -6,16 +6,12 @@ class MoedasPage
   const MoedasPage({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     final tabela =
         MoedaRepository.tabela;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Cripto Moedas',
-        ),
+        title: Text('Cripto Moedas'),
       ),
       body: ListView.separated(
         itemBuilder:
@@ -24,27 +20,21 @@ class MoedasPage
               int moeda,
             ) {
               return ListTile(
-                leading:
-                    Image.asset(
-                      tabela[moeda]
-                          .icone,
-                    ),
+                leading: Image.asset(
+                  tabela[moeda].icone,
+                ),
                 title: Text(
-                  tabela[moeda]
-                      .nome,
+                  tabela[moeda].nome,
                 ),
                 trailing: Text(
-                  tabela[moeda]
-                      .preco
+                  tabela[moeda].preco
                       .toString(),
                 ),
               );
             },
-        padding: EdgeInsets.all(
-          16,
-        ),
-        separatorBuilder:
-            (_, ___) => Divider(),
+        padding: EdgeInsets.all(16),
+        separatorBuilder: (_, ___) =>
+            Divider(),
         itemCount: tabela.length,
       ),
       floatingActionButton:
