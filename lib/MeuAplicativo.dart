@@ -6,21 +6,16 @@ class MeuAplicativo
   const MeuAplicativo({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Moedasbase',
-      debugShowCheckedModeBanner:
-          false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme:
-            const AppBarTheme(
-              backgroundColor:
-                  Colors.indigo,
-              foregroundColor:
-                  Colors.white,
-            ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor:
+              Colors.indigo,
+          foregroundColor: Colors.white,
+        ),
       ),
       home: MoedasPage(),
     );
